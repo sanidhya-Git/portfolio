@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Code, Laptop, Lightbulb, Users } from "lucide-react"
-import Image from "next/image"
+import { Card, CardContent } from "@/components/ui/card";
+import { Code, Laptop, Lightbulb, Users } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -11,23 +11,23 @@ export default function About() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                I'm a passionate full-stack developer with over 5 years of experience building web applications and
+                I&apos;m a passionate full-stack developer with over 5 years of experience building web applications and
                 digital experiences.
               </p>
             </div>
             <div className="space-y-4 text-muted-foreground">
               <p>
                 My journey in software development began during my computer science studies, where I discovered my
-                passion for creating intuitive and efficient digital solutions. Since then, I've worked with startups
+                passion for creating intuitive and efficient digital solutions. Since then, I&apos;ve worked with startups
                 and established companies to deliver high-quality applications that solve real-world problems.
               </p>
               <p>
                 I specialize in JavaScript/TypeScript ecosystems, with expertise in React, Next.js, Node.js, and various
-                database technologies. I'm constantly learning and exploring new technologies to stay at the forefront
+                database technologies. I&apos;m constantly learning and exploring new technologies to stay at the forefront
                 of web development.
               </p>
               <p>
-                When I'm not coding, you can find me hiking, reading tech blogs, or contributing to open-source
+                When I&apos;m not coding, you can find me hiking, reading tech blogs, or contributing to open-source
                 projects. I believe in writing clean, maintainable code and creating accessible user experiences.
               </p>
             </div>
@@ -72,6 +72,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

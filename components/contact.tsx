@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import * as z from "zod"
-import { Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -13,9 +13,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -30,11 +30,11 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
-})
+});
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,20 +44,20 @@ export default function ContactForm() {
       subject: "",
       message: "",
     },
-  })
+  });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
-    setIsSuccess(false)
+  async function onSubmit() {
+    setIsSubmitting(true);
+    setIsSuccess(false);
 
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     // Show success state instead of toast
-    setIsSuccess(true)
+    setIsSuccess(true);
 
-    form.reset()
-    setIsSubmitting(false)
+    form.reset();
+    setIsSubmitting(false);
   }
 
   return (
@@ -139,7 +139,9 @@ export default function ContactForm() {
         {isSuccess && (
           <div className="p-3 rounded-md bg-violet-900/30 border border-violet-500/30 text-violet-200">
             <p className="text-sm font-medium">Message sent successfully!</p>
-            <p className="text-xs mt-1">Thank you for reaching out. I'll get back to you soon.</p>
+            <p className="text-xs mt-1">
+              Thank you for reaching out. I&apos;ll get back to you soon.
+            </p>
           </div>
         )}
 
@@ -158,6 +160,5 @@ export default function ContactForm() {
         </Button>
       </form>
     </Form>
-  )
+  );
 }
-

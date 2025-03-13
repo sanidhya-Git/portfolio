@@ -1,11 +1,8 @@
 import Hero from "@/components/hero";
-
-import About from "@/components/about";
 import Contact from "@/components/contact";
 import ExperienceTimeline from "@/components/experience";
-import TechStack from "@/components/techstack";
 import ProjectCard from "@/components/project";
-import {  Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -24,8 +21,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <TechStack/>
-      <About />     */}
       <section
         id="contact"
         className="py-20 px-4 bg-gradient-to-b from-black to-violet-950/30"
@@ -53,7 +48,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-violet-400" />
-                  <span>Sanidhya mehra</span>
+                  <span>Sanidhya Mehra</span>
                 </div>
               </div>
 

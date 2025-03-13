@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,8 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StaticImageData } from "next/image";
 import rentalog from "@/public/images/rentalog.png";
-// import securewallet from "@/public/images/securewallet.png";
+import secure from "@/public/images/Sercure.png";
 import sntclub from "@/public/images/sntclub.png";
+import skit from "@/public/images/skit.png";
 
 interface ProjectCardProps {
   title: string;
@@ -21,33 +21,34 @@ interface ProjectCardProps {
 }
 
 function ProjectItem({ title, description, image, tags, demoUrl, githubUrl }: ProjectCardProps) {
-  // Use a placeholder image if image is empty
-  const imageSource = image || "";
-  
   return (
     <Card className="overflow-hidden bg-white/5 rounded-xl shadow-lg">
-      <Image src={imageSource} alt={title} width={400} height={300} className="w-full object-cover" />
+      <Image src={image} alt={title} width={400} height={300} className="w-full object-cover" />
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
         <p className="text-sm text-gray-400 mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => tag && (
+          {tags.map((tag) => (
             <Badge key={tag} variant="secondary" className="bg-violet-600 text-white">
               {tag}
             </Badge>
           ))}
         </div>
         <div className="flex justify-between items-center">
-          <Button asChild variant="outline">
-            <a href={demoUrl || "#"} target="_blank" rel="noopener noreferrer">
-              Live Demo
-            </a>
-          </Button>
-          <Button asChild variant="outline">
-            <a href={githubUrl || "#"} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          </Button>
+          {demoUrl && (
+            <Button asChild variant="outline">
+              <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                Live Demo
+              </a>
+            </Button>
+          )}
+          {githubUrl && (
+            <Button asChild variant="outline">
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -66,10 +67,26 @@ export default function ProjectCard() {
     },
     {
       title: "Secure Wallet",
-      description: "A web application for secure a user's digital assets and transactions.",
-      image: "",
+      description: "A web application for securely managing user's digital assets and transactions.",
+      image: secure,
       tags: ["Nextjs", "clerk", "Tailwind CSS"],
       demoUrl: "",
+      githubUrl: "",
+    },
+    {
+      title: "SKIT-Faculty Portal",
+      description: "Interactive platform for SKIT Faculty to manage their own records.",
+      image: skit,
+      tags: ["HTML", "CSS", "PHP", "JS"],
+      demoUrl: "https://testing-server.kistechnosoftware.com/skit/",
+      githubUrl: "",
+    },
+    {
+      title: "Trak-Twin",
+      description: "Interactive platform for tour and travel.",
+      image: skit,
+      tags: ["HTML", "CSS", "PHP", "JS"],
+      demoUrl: "https://traktwin.vercel.app/",
       githubUrl: "",
     },
     {
