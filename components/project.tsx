@@ -10,6 +10,7 @@ import rentalog from "@/public/images/rentalog.png";
 import secure from "@/public/images/Sercure.png";
 import sntclub from "@/public/images/sntclub.png";
 import skit from "@/public/images/skit.png";
+import image from "@/public/images/image.png";
 
 interface ProjectCardProps {
   title: string;
@@ -58,12 +59,12 @@ function ProjectItem({ title, description, image, tags, demoUrl, githubUrl }: Pr
 export default function ProjectCard() {
   const projects: ProjectCardProps[] = [
     {
-      title: "Rent Management System",
-      description: "A Full-Stack Rental Management System with various property management features.",
-      image: rentalog,
-      tags: ["ReactJs", "MongoDB", "Tailwind CSS"],
-      demoUrl: "https://rentalog.vercel.app/#home",
-      githubUrl: "https://github.com/sanidhya-Git/rentalog",
+      title: "SNT-Club",
+      description: "Interactive platform for students to connect, collaborate, and learn.",
+      image: sntclub,
+      tags: ["ReactJs", "Tailwind CSS"],
+      demoUrl: "https://snt-club.vercel.app/",
+      githubUrl: "https://github.com/sanidhya-Git/snt-club.vercel.app",
     },
     {
       title: "Secure Wallet",
@@ -82,21 +83,22 @@ export default function ProjectCard() {
       githubUrl: "",
     },
     {
+      title: "Rent Management System",
+      description: "A Full-Stack Rental Management System with various property management features.",
+      image: rentalog,
+      tags: ["ReactJs", "MongoDB", "Tailwind CSS"],
+      demoUrl: "https://rentalog.vercel.app/#home",
+      githubUrl: "https://github.com/sanidhya-Git/rentalog",
+    },
+    {
       title: "Trak-Twin",
       description: "Interactive platform for tour and travel.",
-      image: skit,
+      image: image,
       tags: ["HTML", "CSS", "PHP", "JS"],
       demoUrl: "https://traktwin.vercel.app/",
       githubUrl: "",
     },
-    {
-      title: "SNT-Club",
-      description: "Interactive platform for students to connect, collaborate, and learn.",
-      image: sntclub,
-      tags: ["ReactJs", "Tailwind CSS"],
-      demoUrl: "https://snt-club.vercel.app/",
-      githubUrl: "https://github.com/sanidhya-Git/snt-club.vercel.app",
-    },
+
   ];
 
   return (

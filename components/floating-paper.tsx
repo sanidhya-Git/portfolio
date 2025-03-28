@@ -8,7 +8,7 @@ export function FloatingPaper({ count = 10 }) {
   const [dimensions, setDimensions] = useState({ width: 1200, height: 900 });
 
   useEffect(() => {
-    // Update dimensions only on client side
+    
     setDimensions({
       width: window.innerWidth,
       height: window.innerHeight,

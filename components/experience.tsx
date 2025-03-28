@@ -6,37 +6,30 @@ import { BriefcaseIcon } from "lucide-react"
 export default function ExperienceTimeline() {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2021 - Present",
+      title: "",
+      company: "",
+      period: "",
       description:
-        "Lead developer for multiple client projects, focusing on React and Next.js applications. Implemented CI/CD pipelines and mentored junior developers.",
-      technologies: ["React", "Next.js", "TypeScript", "GraphQL"],
+        "",
+      technologies: [],
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Agency",
-      period: "2019 - 2021",
+      title: "",
+      company: "",
+      period: "",
       description:
-        "Developed and maintained web applications for enterprise clients. Worked on both frontend and backend systems using modern JavaScript frameworks.",
-      technologies: ["Vue.js", "Node.js", "MongoDB", "AWS"],
+        "",
+      technologies: [],
     },
     {
-      title: "Web Developer",
-      company: "Creative Web Studio",
-      period: "2017 - 2019",
+      title: "",
+      company: "",
+      period: "",
       description:
-        "Created responsive websites and e-commerce solutions for small to medium businesses. Collaborated with designers to implement pixel-perfect interfaces.",
-      technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
+        "",
+      technologies: [],
     },
-    {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "2016 - 2017",
-      description:
-        "Assisted in the development of web applications and learned modern development practices. Participated in code reviews and agile development processes.",
-      technologies: ["HTML/CSS", "JavaScript", "jQuery", "Bootstrap"],
-    },
+    
   ]
 
   return (
