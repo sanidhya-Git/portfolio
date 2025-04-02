@@ -64,7 +64,7 @@ export default function ProjectCard() {
       image: sntclub,
       tags: ["ReactJs", "Tailwind CSS"],
       demoUrl: "https://snt-club.vercel.app/",
-      githubUrl: "https://github.com/sanidhya-Git/snt-club.vercel.app",
+      githubUrl: "", //"https://github.com/sanidhya-Git/snt-club.vercel.app",
     },
     {
       title: "Secure Wallet",
@@ -79,7 +79,7 @@ export default function ProjectCard() {
       description: "Interactive platform for SKIT Faculty to manage their own records.",
       image: skit,
       tags: ["HTML", "CSS", "PHP", "JS"],
-      demoUrl: "https://testing-server.kistechnosoftware.com/skit/",
+      demoUrl: "", //"https://testing-server.kistechnosoftware.com/skit/",
       githubUrl: "",
     },
     {
@@ -88,7 +88,7 @@ export default function ProjectCard() {
       image: rentalog,
       tags: ["ReactJs", "MongoDB", "Tailwind CSS"],
       demoUrl: "https://rentalog.vercel.app/#home",
-      githubUrl: "https://github.com/sanidhya-Git/rentalog",
+      githubUrl: "", //"https://github.com/sanidhya-Git/rentalog",
     },
     {
       title: "Trak-Twin",

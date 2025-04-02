@@ -38,10 +38,10 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gray-400 text-xl mb-8 max-w-2xl mx-auto"
           >
-            <p className="whitespace-pre-wrap text-2xl">
+            <span className="whitespace-pre-wrap text-2xl">
               Full-stack developer dedicated to crafting seamless digital
               experiences with high performance that engage and inspire.
-            </p>
+            </span>
           </motion.p>
 
           <motion.div
