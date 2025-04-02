@@ -40,15 +40,34 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-violet-400" />
-                  <span>Sanidhya.web@gmail.com</span>
+                  <a
+                    href="mailto:Sanidhya.web@gmail.com"
+                    className="text-white "
+                  >
+                    Sanidhya.web@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-violet-400" />
-                  <span>Sanidhya-git</span>
+                  <a
+                    href="https://github.com/Sanidhya-git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white "
+                  >
+                    Sanidhya-git
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-violet-400" />
-                  <span>Sanidhya Mehra</span>
+                  <a
+                    href="https://www.linkedin.com/in/sanidhya-mehra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white "
+                  >
+                    Sanidhya Mehra
+                  </a>
                 </div>
               </div>
 
@@ -58,7 +77,6 @@ export default function Home() {
                 Available for remote work worldwide
               </p>
             </div>
-
             <Contact />
           </div>
         </div>
