@@ -73,13 +73,14 @@ export default function ProjectCard() {
       tags: ["Nextjs", "clerk", "Tailwind CSS"],
       demoUrl: "",
       githubUrl: "",
+   
     },
     {
       title: "SKIT-Faculty Portal",
       description: "Interactive platform for SKIT Faculty to manage their own records.",
       image: skit,
       tags: ["HTML", "CSS", "PHP", "JS"],
-      demoUrl: "", //"https://testing-server.kistechnosoftware.com/skit/",
+      demoUrl: "https://testing-server.kistechnosoftware.com/skit/",
       githubUrl: "",
     },
     {
@@ -116,11 +117,11 @@ export default function ProjectCard() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <Button variant="outline" className="border-violet-600 text-violet-400 hover:bg-violet-950/50">
             View All Projects <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

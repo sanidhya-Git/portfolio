@@ -3,12 +3,15 @@ import Contact from "@/components/contact";
 import ExperienceTimeline from "@/components/experience";
 import ProjectCard from "@/components/project";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { Client } from "@/components/client";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Hero />
+    
+      <Hero /> 
       <ProjectCard />
+      <Client/>
       <section id="experience" className="py-20 px-4 bg-black/80">
         <div className="container max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -77,6 +80,7 @@ export default function Home() {
                 Available for remote work worldwide
               </p>
             </div>
+            
             <Contact />
           </div>
         </div>
