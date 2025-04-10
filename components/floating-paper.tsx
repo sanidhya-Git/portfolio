@@ -3,9 +3,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FileText, AtomIcon, Database, Triangle } from "lucide-react";
+import { useMounted } from "@/hooks/useMounted";
 
 export function FloatingPaper({ count = 10 }) {
   const [dimensions, setDimensions] = useState({ width: 1200, height: 900 });
+  const mounted = useMounted();
+
 
   useEffect(() => {
     
@@ -24,6 +27,7 @@ export function FloatingPaper({ count = 10 }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+if(!mounted) return null
 
   return (
     <div className="relative w-full h-full">
