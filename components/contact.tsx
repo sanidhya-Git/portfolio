@@ -46,19 +46,32 @@ export default function ContactForm() {
     },
   });
 
-  async function onSubmit() {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     setIsSuccess(false);
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Show success state instead of toast
-    setIsSuccess(true);
-
-    form.reset();
+  
+    try {
+      const res = await fetch("/api/sendContact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+  
+      if (res.ok) {
+        setIsSuccess(true);
+        form.reset();
+      } else {
+        console.error("Email failed to send.");
+      }
+    } catch (error) {
+      console.error("Something went wrong:", error);
+    }
+  
     setIsSubmitting(false);
   }
+  
 
   return (
     <Form {...form}>
