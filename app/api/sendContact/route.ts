@@ -15,15 +15,7 @@ export async function POST(req: Request) {
     },
   });
 
-  // const mailOptions = {
-  //   from: process.env.EMAIL_USER,
-  //   to: email,
-  //   subject: "We received your message ✔️",
-  //
-  //   `,
-  // };sa
-
-  // ErrorEvent
+  
 
   const mailOptions = {
     from: `${process.env.EMAIL_USER}`,
