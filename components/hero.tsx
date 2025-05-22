@@ -8,10 +8,7 @@ import { RoboAnimation } from "@/components/robo-animation";
 
 export default function Hero() {
   return (
-    
     <div className="relative min-h-[calc(100vh-76px)] flex items-center">
-      
-      
       <div className="absolute inset-0 overflow-hidden">
         <FloatingPaper count={10} />
       </div>
@@ -50,21 +47,17 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button
-              size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8"
-            >
-              <FileText className="mr-2 h-5 w-5" />
-              About
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-purple-500 hover:bg-purple-500/20"
+            
+
+            <a
+              href="https://www.linkedin.com/in/sanidhya-mehra-a0310a25b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 border text-white border-purple-500 hover:bg-purple-500/20 rounded-md text-sm font-medium transition-colors"
             >
               <Sparkles className="mr-2 h-5 w-5" />
               Connect
-            </Button>
+            </a>
           </motion.div>
         </div>
       </div>

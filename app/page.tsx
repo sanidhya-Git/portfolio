@@ -2,7 +2,7 @@ import Hero from "@/components/hero";
 import Contact from "@/components/contact";
 import ExperienceTimeline from "@/components/experience";
 import ProjectCard from "@/components/project";
-import { Github, Linkedin, Mail } from "lucide-react";
+import {  GithubIcon, Linkedin, Mail } from "lucide-react";
 import { Client } from "@/components/client";
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Github className="h-5 w-5 text-violet-400" />
+                  <GithubIcon className="h-5 w-5 text-violet-400" />
                   <a
                     href="https://github.com/Sanidhya-git"
                     target="_blank"
