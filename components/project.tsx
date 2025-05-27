@@ -11,6 +11,7 @@ import secure from "@/public/images/Sercure.png";
 import sntclub from "@/public/images/sntclub.png";
 import skit from "@/public/images/skit.png";
 import image from "@/public/images/image.png";
+import wealthvisory from "@/public/images/wealthvisory.png";
 
 interface ProjectCardProps {
   title: string;
@@ -58,6 +59,14 @@ function ProjectItem({ title, description, image, tags, demoUrl, githubUrl }: Pr
 
 export default function ProjectCard() {
   const projects: ProjectCardProps[] = [
+    {
+      title: "WealthVisory",
+      description: "Developed a web-based investment management platform enabling clients to track and analyze real-time stocks, mutual funds, and SIPs for informed, data-driven portfolio decisions.",
+      image: wealthvisory,
+      tags: ["Vite","ReactJs", "Tailwind CSS" ,"ExpressJs"],
+      demoUrl: "https://www.wealthvisory.in/",
+      githubUrl: "", //"https://github.com/sanidhya-Git/snt-club.vercel.app",
+    },
     {
       title: "SNT-Club",
       description: "Interactive platform for students to connect, collaborate, and learn.",
