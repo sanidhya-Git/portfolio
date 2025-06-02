@@ -40,7 +40,7 @@ export default function Header() {
             Contact
           </Link>
           <Button variant="outline" size="sm" asChild>
-            <Link href="/resume.pdf" target="_blank">
+            <Link href="/files/resume.pdf" target="_blank" >
               <FileText className="mr-2 h-4 w-4" />
               Resume
             </Link>
@@ -74,7 +74,7 @@ export default function Header() {
               </Link>
               <div className="flex items-center justify-between px-4">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/resume.pdf" target="_blank">
+                  <Link href="/files/resume.pdf" target="_blank" >
                     <FileText className="mr-2 h-4 w-4" />
                     Resume
                   </Link>
