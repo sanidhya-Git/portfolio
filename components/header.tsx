@@ -30,10 +30,10 @@ export default function Header() {
           <Link href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
             Projects
           </Link>
-          <Link href="#skills" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link href="#client" className="text-muted-foreground hover:text-foreground transition-colors">
             Skills
           </Link>
-          <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">
             About
           </Link>
           <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -59,10 +59,10 @@ export default function Header() {
               >
                 Projects
               </Link>
-              <Link href="#skills" className="px-4 py-2 hover:bg-muted rounded-md" onClick={() => setIsMenuOpen(false)}>
+              <Link href="#client" className="px-4 py-2 hover:bg-muted rounded-md" onClick={() => setIsMenuOpen(false)}>
                 Skills
               </Link>
-              <Link href="#about" className="px-4 py-2 hover:bg-muted rounded-md" onClick={() => setIsMenuOpen(false)}>
+              <Link href="#experience" className="px-4 py-2 hover:bg-muted rounded-md" onClick={() => setIsMenuOpen(false)}>
                 About
               </Link>
               <Link
