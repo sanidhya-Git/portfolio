@@ -6,11 +6,11 @@ import { BriefcaseIcon } from "lucide-react"
 export default function ExperienceTimeline() {
   const experiences = [
     {
-      title: "",
-      company: "",
-      period: "",
+      title: "Software Developer  ",
+      company: "WealthVisory",
+      period: "3 months",
       description:
-        "",
+        "Developed a web-based investment management platform enabling clients to track and analyze real-time stocks, mutual funds, and SIPs for informed, data-driven portfolio decisions. wealthvisory.in",
       technologies: [],
     },
     {
