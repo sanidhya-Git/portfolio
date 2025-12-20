@@ -1,177 +1,101 @@
-"use client";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Linkedin, Github, SunMedium as Medium } from "lucide-react"
 
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  subject: z.string().min(5, {
-    message: "Subject must be at least 5 characters.",
-  }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-});
-
-export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    setIsSuccess(false);
-  
-    try {
-      const res = await fetch("/api/sendContact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-  
-      if (res.ok) {
-        setIsSuccess(true);
-        form.reset();
-      } else {
-        console.error("Email failed to send.");
-      }
-    } catch (error) {
-      console.error("Something went wrong:", error);
-    }
-  
-    setIsSubmitting(false);
-  }
-  
-
+export function Contact() {
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Your name"
-                  {...field}
-                  className="bg-black/50 border-violet-900/30 focus-visible:ring-violet-500"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <section id="contact" className="py-20 px-6 lg:px-12 bg-background">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left Column - Contact Form */}
+          <div className="space-y-6">
+            <Input placeholder="Your name" className="h-14 text-base border-foreground/20 rounded-md" />
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="your.email@example.com"
-                  type="email"
-                  {...field}
-                  className="bg-black/50 border-violet-900/30 focus-visible:ring-violet-500"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+            <Input type="email" placeholder="Enter email" className="h-14 text-base border-foreground/20 rounded-md" />
 
-        <FormField
-          control={form.control}
-          name="subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Subject</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="What is this regarding?"
-                  {...field}
-                  className="bg-black/50 border-violet-900/30 focus-visible:ring-violet-500"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+            {/* Phone input with country code */}
+            <div className="flex gap-2">
+              <select className="h-14 px-4 text-base border border-foreground/20 rounded-md bg-background">
+                <option>+91 IND</option>
+                <option>+1 USA</option>
+                <option>+44 UK</option>
+              </select>
+              <Input
+                type="tel"
+                placeholder="Enter Phone Number (Optional)"
+                className="h-14 text-base border-foreground/20 rounded-md flex-1"
+              />
+            </div>
 
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Your message..."
-                  {...field}
-                  className="bg-black/50 border-violet-900/30 focus-visible:ring-violet-500 min-h-[120px]"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
-        {isSuccess && (
-          <div className="p-3 rounded-md bg-violet-900/30 border border-violet-500/30 text-violet-200">
-            <p className="text-sm font-medium">Message sent successfully!</p>
-            <p className="text-xs mt-1">
-              Thank you for reaching out. I&apos;ll get back to you soon.
-            </p>
+
+            <Textarea
+              placeholder="How can I help?*"
+              rows={6}
+              className="text-base border-foreground/20 rounded-md resize-none"
+            />
+
+            {/* Submit button and social icons */}
+            <div className="flex items-center gap-4">
+              <Button
+                type="submit"
+                size="lg"
+                className="bg-foreground text-background hover:bg-foreground/90 h-14 px-8"
+              >
+                Get In Touch
+              </Button>
+
+              <a
+                href="https://www.linkedin.com/in/sanidhya-mehra-a0310a25b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 w-12 border-2 border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+
+              <a
+                href="https://github.com/sanidhya-Git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 w-12 border-2 border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+
+        
+              
+            </div>
           </div>
-        )}
 
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700"
-        >
-          {isSubmitting ? (
-            <>Sending...</>
-          ) : (
-            <>
-              Send Message <Send className="ml-2 h-4 w-4" />
-            </>
-          )}
-        </Button>
-      </form>
-    </Form>
-  );
+          {/* Right Column - Contact Information */}
+          <div className="space-y-8">
+            <h2 className="text-5xl lg:text-6xl font-bold leading-tight">{"Let's talk for Something special"}</h2>
+
+            <p className="text-lg text-muted-foreground">
+              I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive
+              experiences.
+            </p>
+
+            <div className="space-y-4">
+              <a
+                href="mailto:Sanidhya.web@gmail.com"
+                className="block text-xl font-semibold underline hover:text-muted-foreground transition-colors"
+              >
+                Sanidhya.web@gmail.com
+              </a>
+
+              <a
+                href="tel:+917352579915"
+                className="block text-xl font-semibold underline hover:text-muted-foreground transition-colors"
+              >
+                +91 8955465833
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
